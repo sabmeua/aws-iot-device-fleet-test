@@ -1,0 +1,3 @@
+bootstrap_certs/*
+!bootstrap_certs/.gitkeep
+config.ini
