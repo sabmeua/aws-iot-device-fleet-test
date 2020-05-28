@@ -1,0 +1,12 @@
+version: '3'
+services:
+  fleet_device:
+    build: .
+    working_dir: /
+    volumes:
+      - ./run_device.sh:/run_device.sh
+      - ./bootstrap_certs:/aws-iot-fleet-provisioning/certs
+      - ./config.ini:/aws-iot-fleet-provisioning/config.ini
+    entrypoint:
+      - /bin/ash
+      - run_device.sh
