@@ -65,8 +65,7 @@ aws iot create-policy --policy-name ${DEVICE_TEMPLATE_POLICY} --policy-document 
         \"iot:Connect\"
       ],
       \"Resource\": [
-        \"arn:aws:iot:ap-northeast-1:${ACCOUNT_ID}:client/\${iot:Connection.Thing.ThingName}\",
-        \"arn:aws:iot:ap-northeast-1:${ACCOUNT_ID}:client/fleet_provisioning_demo\"
+        \"arn:aws:iot:ap-northeast-1:${ACCOUNT_ID}:client/*\"
       ]
     },
     {
