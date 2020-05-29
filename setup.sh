@@ -174,6 +174,6 @@ SECURE_CERT_PATH = /aws-iot-fleet-provisioning/certs
 ROOT_CERT = AmazonRootCA1.pem
 CLAIM_CERT = certificate.pem.crt
 SECURE_KEY = private.pem.key
-IOT_ENDPOINT = $(aws iot describe-endpoint --query 'endpointAddress' --output text)
+IOT_ENDPOINT = $(aws iot describe-endpoint --endpoint-type iot:Data-ATS --query 'endpointAddress' --output text)
 PROVISIONING_TEMPLATE_NAME = ${FLEET_PROV_TEMPLATE}
 INI
