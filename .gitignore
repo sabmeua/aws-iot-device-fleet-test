@@ -1,3 +1,4 @@
 bootstrap_certs/*
 !bootstrap_certs/.gitkeep
+!bootstrap_certs/root.ca.pem
 config.ini
