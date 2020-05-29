@@ -5,6 +5,7 @@ services:
     working_dir: /
     volumes:
       - ./run_device.sh:/run_device.sh
+      - ./updateDeviceShadow.py:/aws-iot-fleet-provisioning/updateDeviceShadow.py
       - ./bootstrap_certs:/aws-iot-fleet-provisioning/certs
       - ./config.ini:/aws-iot-fleet-provisioning/config.ini
     entrypoint:
