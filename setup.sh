@@ -171,7 +171,7 @@ echo "Generate device config file"
 cat <<INI | tee ./config.ini
 [SETTINGS]
 SECURE_CERT_PATH = /aws-iot-fleet-provisioning/certs
-ROOT_CERT = AmazonRootCA1.pem
+ROOT_CERT = root.ca.pem
 CLAIM_CERT = certificate.pem.crt
 SECURE_KEY = private.pem.key
 IOT_ENDPOINT = $(aws iot describe-endpoint --endpoint-type iot:Data-ATS --query 'endpointAddress' --output text)
