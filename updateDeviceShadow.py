@@ -26,6 +26,8 @@ shadowClient.configureAutoReconnectBackoffTime(1, 32, 20)
 shadowClient.configureConnectDisconnectTimeout(10)
 shadowClient.configureMQTTOperationTimeout(5)
 
+print(f'Start updating the battery status : {dev["thingName"]}')
+
 shadowClient.connect()
 shadowHandler = shadowClient.createShadowHandlerWithName(dev['thingName'], True)
 shadowHandler.shadowDelete(callback, 5)
@@ -36,5 +38,6 @@ while True:
     prop['state']['desired']['batt'] = batt
     shadowHandler.shadowUpdate(json.dumps(prop), callback, 5)
     if batt < 50:
+        print(f'Stop updating due to the battery remaining is less than 50%')
         break
     time.sleep(30)
