@@ -32,10 +32,10 @@ shadowClient.connect()
 shadowHandler = shadowClient.createShadowHandlerWithName(dev['thingName'], True)
 shadowHandler.shadowDelete(callback, 5)
 
-prop = {'state':{'desired':{'batt': 100.0}}}
+prop = {'state':{'reported':{'batt': 100.0}}}
 while True:
     batt = random.betavariate(6, 3) * 100
-    prop['state']['desired']['batt'] = batt
+    prop['state']['reported']['batt'] = batt
     shadowHandler.shadowUpdate(json.dumps(prop), callback, 5)
     if batt < 50:
         print(f'Stop updating due to the battery remaining is less than 50%')
